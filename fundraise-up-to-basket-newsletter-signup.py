@@ -8,8 +8,7 @@
 if input_data['source_url'].startswith("https://foundation.mozilla.org") or input_data['source_url'].startswith("https://donate.mozilla.org"):
     urlParts = input_data['source_url'].split("/")
     lang = urlParts[3]
-else:
-    
+else: 
     lang = ""
 
 #Possibly foolish, but let's lean on the assumption that Fundraise Up has passed everything below in the correct format.
