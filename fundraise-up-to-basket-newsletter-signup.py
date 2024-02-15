@@ -25,6 +25,7 @@ if any([input_data['source_url'].startswith(u) for u in URL_STARTS]):
 else:
      lang = ""
 
+#Possibly foolish, but let's lean on the assumption that Fundraise Up has passed everything below in the correct format.
 #Changing the assumption slightly and using get to retrieve the right key and value (or None). Since email is required force
 #that to be checked before creating the payload. Only send the request if the email is populated.
 if input_data.get('email'):
@@ -38,7 +39,7 @@ if input_data.get('email'):
     }
 
     try:
-        response = requests.post('https://basket-dev.allizom.org/news/subscribe/', data=payload)
+        response = requests.post('https://basket.mozilla.org/news/subscribe/', data=payload)
         response.raise_for_status()
     except HTTPError as http_err:
             print(f'HTTP error: {http_err}')
